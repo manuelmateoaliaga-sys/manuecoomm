@@ -47,6 +47,7 @@
             <div class="header-actions">
 
                 <div id="guestActions">
+
                     <a href="login.html" class="login-link">
                         Iniciar sesión
                     </a>
@@ -54,22 +55,29 @@
                     <a href="registro.html" class="register-button">
                         Crear cuenta
                     </a>
+
                 </div>
 
                 <div id="userActions" style="display: none;">
+
                     <a href="cuenta.html" class="login-link">
                         Mi cuenta
                     </a>
 
-                    <button id="logoutButton" class="register-button" type="button">
+                    <button
+                        id="logoutButton"
+                        class="register-button"
+                        type="button">
+
                         Cerrar sesión
+
                     </button>
+
                 </div>
 
-                <a href="carrito.html" class="cart-button">
+                <a href="#productos" class="cart-button">
                     🛒
-                    <span>Mi lista</span>
-                    <strong id="cartCount">0</strong>
+                    <span>Mi tienda</span>
                 </a>
 
             </div>
@@ -213,7 +221,7 @@
             <div class="category-grid">
 
 
-                <a href="#perfumes" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85"
@@ -234,7 +242,7 @@
                 </a>
 
 
-                <a href="#relojes" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"
@@ -255,7 +263,7 @@
                 </a>
 
 
-                <a href="#zapas" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
@@ -276,7 +284,7 @@
                 </a>
 
 
-                <a href="#construccion" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=85"
@@ -297,7 +305,7 @@
                 </a>
 
 
-                <a href="#electronica" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=900&q=85"
@@ -318,7 +326,7 @@
                 </a>
 
 
-                <a href="#accesorios" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=900&q=85"
@@ -339,7 +347,7 @@
                 </a>
 
 
-                <a href="#vintage" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85"
@@ -360,7 +368,7 @@
                 </a>
 
 
-                <a href="#ropa" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85"
@@ -381,7 +389,7 @@
                 </a>
 
 
-                <a href="#futbol" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=900&q=85"
@@ -402,7 +410,7 @@
                 </a>
 
 
-                <a href="#vapers" class="category-card">
+                <a href="#productos" class="category-card">
 
                     <img
                         src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=900&q=85"
@@ -428,7 +436,7 @@
 
 
         <!-- =================================================
-             PRODUCTOS
+             PRODUCTOS - ECWID
         ================================================== -->
 
         <section class="products-section" id="productos">
@@ -440,668 +448,43 @@
                 </div>
 
                 <h2>
-                    PRODUCTOS DESTACADOS
+                    PRODUCTOS
                 </h2>
 
                 <p>
-                    Una selección inicial de productos para nuestra plataforma.
+                    Explora nuestro catálogo y realiza tus pedidos
+                    directamente desde la tienda.
                 </p>
 
             </div>
 
 
-            <div class="product-grid">
-
-
-                <!-- PERFUMES -->
-
-                <article class="product-card" id="perfumes">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=1000&q=85"
-                            alt="Perfume">
-
-                        <span class="product-category">
-                            PERFUMES
-                        </span>
-
-                        <span class="product-number">
-                            01
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Perfumes
-                        </h3>
-
-                        <p>
-                            Fragancias y perfumes para diferentes
-                            estilos y públicos.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    12,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Perfumes"
-                                data-price="12.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- RELOJES -->
-
-                <article class="product-card" id="relojes">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85"
-                            alt="Reloj">
-
-                        <span class="product-category">
-                            RELOJES
-                        </span>
-
-                        <span class="product-number">
-                            02
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Relojes
-                        </h3>
-
-                        <p>
-                            Relojes de diferentes diseños para
-                            complementar cualquier estilo.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    18,50 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Relojes"
-                                data-price="18.50">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ZAPAS -->
-
-                <article class="product-card" id="zapas">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
-                            alt="Zapatillas">
-
-                        <span class="product-category">
-                            CALZADO
-                        </span>
-
-                        <span class="product-number">
-                            03
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Zapas
-                        </h3>
-
-                        <p>
-                            Sneakers y zapatillas deportivas
-                            para diferentes estilos.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    24,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Zapas"
-                                data-price="24.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CONSTRUCCIÓN -->
-
-                <article class="product-card" id="construccion">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=85"
-                            alt="Construcción">
-
-                        <span class="product-category">
-                            CONSTRUCCIÓN
-                        </span>
-
-                        <span class="product-number">
-                            04
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Construcción
-                        </h3>
-
-                        <p>
-                            Herramientas, materiales y productos
-                            para construcción.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    9,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Construcción"
-                                data-price="9.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ELECTRÓNICA -->
-
-                <article class="product-card" id="electronica">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=1000&q=85"
-                            alt="Electrónica">
-
-                        <span class="product-category">
-                            ELECTRÓNICA
-                        </span>
-
-                        <span class="product-number">
-                            05
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Electrónica
-                        </h3>
-
-                        <p>
-                            Tecnología, dispositivos y accesorios
-                            electrónicos.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    15,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Electrónica"
-                                data-price="15.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ACCESORIOS -->
-
-                <article class="product-card" id="accesorios">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?auto=format&fit=crop&w=1000&q=85"
-                            alt="Accesorios">
-
-                        <span class="product-category">
-                            ACCESORIOS
-                        </span>
-
-                        <span class="product-number">
-                            06
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Accesorios
-                        </h3>
-
-                        <p>
-                            Complementos y accesorios de moda
-                            para diferentes estilos.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    6,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Accesorios"
-                                data-price="6.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- VINTAGE -->
-
-                <article class="product-card" id="vintage">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85"
-                            alt="Ropa vintage">
-
-                        <span class="product-category">
-                            VINTAGE
-                        </span>
-
-                        <span class="product-number">
-                            07
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Ropa Vintage
-                        </h3>
-
-                        <p>
-                            Prendas retro y vintage para
-                            diferentes estilos.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    8,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Ropa Vintage"
-                                data-price="8.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- ROPA -->
-
-                <article class="product-card" id="ropa">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
-                            alt="Ropa">
-
-                        <span class="product-category">
-                            MODA
-                        </span>
-
-                        <span class="product-number">
-                            08
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Ropa
-                        </h3>
-
-                        <p>
-                            Prendas y productos de moda
-                            para diferentes públicos.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    11,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Ropa"
-                                data-price="11.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- FÚTBOL -->
-
-                <article class="product-card" id="futbol">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=85"
-                            alt="Fútbol">
-
-                        <span class="product-category">
-                            FÚTBOL
-                        </span>
-
-                        <span class="product-number">
-                            09
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            PROVEEDOR
-                        </div>
-
-                        <h3>
-                            Fútbol
-                        </h3>
-
-                        <p>
-                            Balones, equipamiento y productos
-                            relacionados con el fútbol.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    12,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Fútbol"
-                                data-price="12.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
-
-                <!-- VAPERS -->
-
-                <article class="product-card" id="vapers">
-
-                    <div class="product-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=1000&q=85"
-                            alt="Vapers">
-
-                        <span class="product-category">
-                            VAPERS
-                        </span>
-
-                        <span class="product-number">
-                            10
-                        </span>
-
-                    </div>
-
-                    <div class="product-body">
-
-                        <div class="product-supplier">
-                            SUJETO A NORMATIVA
-                        </div>
-
-                        <h3>
-                            Vapers
-                        </h3>
-
-                        <p>
-                            Productos relacionados con vapeo,
-                            sujetos a la normativa aplicable.
-                        </p>
-
-                        <div class="product-footer">
-
-                            <div class="price">
-
-                                <small>
-                                    DESDE
-                                </small>
-
-                                <strong>
-                                    19,90 €
-                                </strong>
-
-                            </div>
-
-                            <button
-                                class="add-product"
-                                data-product="Vapers"
-                                data-price="19.90">
-
-                                + Añadir
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </article>
-
+            <!-- =================================================
+                 ECWID
+            ================================================== -->
+
+            <div id="my-store-141602766"></div>
+
+            <div>
+
+                <script
+                    data-cfasync="false"
+                    type="text/javascript"
+                    src="https://app.ecwid.com/script.js?141602766&data_platform=code&data_date=2026-08-28"
+                    charset="utf-8">
+                </script>
+
+                <script type="text/javascript">
+
+                    xProductBrowser(
+                        "categoriesPerRow=3",
+                        "views=grid(20,3) list(60) table(60)",
+                        "categoryView=grid",
+                        "searchView=list",
+                        "id=my-store-141602766"
+                    );
+
+                </script>
 
             </div>
 
@@ -1356,8 +739,8 @@
                     Crear cuenta
                 </a>
 
-                <a href="carrito.html">
-                    Mi lista
+                <a href="#productos">
+                    Mi tienda
                 </a>
 
                 <a href="pedidos.html">
@@ -1410,7 +793,7 @@
 
 
     <!-- =====================================================
-         JAVASCRIPT
+         FIREBASE
     ====================================================== -->
 
     <script type="module">
@@ -1425,47 +808,89 @@
         } from
             "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 
+
         const firebaseConfig = {
+
             apiKey: "AIzaSyD38CaxEVX_iVJZqvwlmxsb5w--WtTk8e4",
+
             authDomain: "manu-ecom.firebaseapp.com",
+
             projectId: "manu-ecom",
+
             storageBucket: "manu-ecom.firebasestorage.app",
+
             messagingSenderId: "461569348434",
+
             appId: "1:461569348434:web:b822e97aa9c4352f3da08b",
+
             measurementId: "G-8160RLXC3R"
+
         };
 
+
         const app = initializeApp(firebaseConfig);
+
         const auth = getAuth(app);
 
-        const guestActions = document.getElementById("guestActions");
-        const userActions = document.getElementById("userActions");
-        const logoutButton = document.getElementById("logoutButton");
+
+        const guestActions =
+            document.getElementById("guestActions");
+
+        const userActions =
+            document.getElementById("userActions");
+
+        const logoutButton =
+            document.getElementById("logoutButton");
+
 
         onAuthStateChanged(auth, (user) => {
+
             if (user) {
+
                 guestActions.style.display = "none";
+
                 userActions.style.display = "flex";
+
             } else {
+
                 guestActions.style.display = "flex";
+
                 userActions.style.display = "none";
+
             }
+
         });
 
+
         logoutButton.addEventListener("click", async () => {
+
             try {
+
                 await signOut(auth);
+
                 window.location.reload();
+
             } catch (error) {
-                console.error("Error al cerrar sesión:", error);
-                alert("No se ha podido cerrar la sesión.");
+
+                console.error(
+                    "Error al cerrar sesión:",
+                    error
+                );
+
+                alert(
+                    "No se ha podido cerrar la sesión."
+                );
+
             }
+
         });
 
     </script>
+
 
     <script src="script.js"></script>
 
 </body>
 
 </html>
+                   
