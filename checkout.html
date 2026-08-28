@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Finaliza tu pedido en MANU ECOOM">
+
+    <title>Checkout | MANU ECOOM</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* =====================================================
+           CHECKOUT
+        ===================================================== */
+
+        .checkout-page {
+            min-height: 80vh;
+            background: #070707;
+        }
+
+        .checkout-section {
+            width: min(94%, 1250px);
+            margin: auto;
+            padding: 75px 0 110px;
+        }
+
+        .checkout-heading {
+            margin-bottom: 45px;
+        }
+
+        .checkout-heading h1 {
+            margin-top: 10px;
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: .95;
+            letter-spacing: -3px;
+            font-weight: 900;
+        }
+
+        .checkout-heading p {
+            margin-top: 15px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .checkout-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 380px;
+            gap: 25px;
+            align-items: start;
+        }
+
+        .checkout-form {
+            padding: 30px;
+
+            background: #0e0e0e;
+
+            border: 1px solid #242424;
+            border-radius: 11px;
+        }
+
+        .form-section {
+            margin-bottom: 35px;
+        }
+
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-bottom: 22px;
+        }
+
+        .form-number {
+            width: 30px;
+            height: 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--blue);
+            color: #050505;
+
+            font-size: 10px;
+            font-weight: 900;
+        }
+
+        .form-section-title h2 {
+            font-size: 19px;
+            font-weight: 900;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: #888;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            height: 48px;
+
+            padding: 0 14px;
+
+            border: 1px solid #292929;
+            border-radius: 6px;
+
+            outline: none;
+
+            background: #080808;
+            color: #fff;
+
+            font-family: inherit;
+            font-size: 12px;
+
+            transition: .25s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 2px rgba(114, 189, 233, .08);
+        }
+
+        .form-group input::placeholder {
+            color: #444;
+        }
+
+        .checkout-summary {
+            position: sticky;
+            top: 105px;
+
+            padding: 28px;
+
+            border: 1px solid #252525;
+            border-radius: 11px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111,
+                    #0a0a0a
+                );
+        }
+
+        .checkout-summary-label {
+            color: var(--blue);
+
+            font-size: 9px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .checkout-summary h2 {
+            margin-top: 7px;
+
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        #checkoutProducts {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+        .checkout-product {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+
+            padding-bottom: 12px;
+
+            border-bottom: 1px solid #202020;
+        }
+
+        .checkout-product-info {
+            min-width: 0;
+        }
+
+        .checkout-product-info strong {
+            display: block;
+
+            color: #fff;
+
+            font-size: 12px;
+        }
+
+        .checkout-product-info span {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #666;
+
+            font-size: 10px;
+        }
+
+        .checkout-product-price {
+            color: var(--blue);
+
+            font-size: 12px;
+            font-weight: 900;
+
+            white-space: nowrap;
+        }
+
+        .checkout-summary-row {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 19px;
+
+            color: #777;
+
+            font-size: 12px;
+        }
+
+        .checkout-summary-row strong {
+            color: #fff;
+        }
+
+        .checkout-divider {
+            height: 1px;
+
+            margin: 23px 0;
+
+            background: #292929;
+        }
+
+        .checkout-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .checkout-total span {
+            color: #777;
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .checkout-total strong {
+            color: var(--blue);
+
+            font-size: 27px;
+            font-weight: 900;
+        }
+
+        .pay-button {
+            width: 100%;
+            min-height: 54px;
+
+            margin-top: 27px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+            border-radius: 7px;
+
+            background: var(--blue);
+            color: #050505;
+
+            font-size: 11px;
+            font-weight: 900;
+
+            cursor: pointer;
+
+            transition: .3s ease;
+        }
+
+        .pay-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .secure-checkout {
+            margin-top: 15px;
+
+            text-align: center;
+
+            color: #555;
+
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .empty-checkout {
+            padding: 40px;
+
+            border: 1px dashed #292929;
+            border-radius: 8px;
+
+            color: #666;
+
+            text-align: center;
+
+            font-size: 12px;
+        }
+
+        .back-cart {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: #777;
+
+            font-size: 11px;
+            font-weight: 800;
+
+            transition: .2s;
+        }
+
+        .back-cart:hover {
+            color: var(--blue);
+        }
+
+        @media (max-width: 950px) {
+
+            .checkout-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .checkout-section {
+                padding: 55px 0 80px;
+            }
+
+            .checkout-form {
+                padding: 20px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .checkout-summary {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                MANU<span>ECOM</span>
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html#categorias">
+                    Categorías
+                </a>
+
+                <a href="index.html#productos">
+                    Productos
+                </a>
+
+                <a href="index.html#proveedores">
+                    Proveedores
+                </a>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <a href="carrito.html" class="cart-button">
+                    🛒
+                    <span>Carrito</span>
+                    <strong id="cartCount">0</strong>
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CHECKOUT
+    ====================================================== -->
+
+    <main class="checkout-page">
+
+        <section class="checkout-section">
+
+            <div class="checkout-heading">
+
+                <div class="section-label">
+                    MANU ECOOM
+                </div>
+
+                <h1>
+                    FINALIZAR PEDIDO
+                </h1>
+
+                <p>
+                    Introduce tus datos para preparar tu pedido.
+                </p>
+
+            </div>
+
+
+            <div class="checkout-layout">
+
+
+                <!-- FORMULARIO -->
+
+                <form
+                    class="checkout-form"
+                    id="checkoutForm">
+
+
+                    <!-- DATOS PERSONALES -->
+
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <div class="form-number">
+                                01
+                            </div>
+
+                            <h2>
+                                Datos personales
+                            </h2>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    NOMBRE
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Tu nombre"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="surname">
+                                    APELLIDOS
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="surname"
+                                    name="surname"
+                                    placeholder="Tus apellidos"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="email">
+                                    EMAIL
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="tu@email.com"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="phone">
+                                    TELÉFONO
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+34 600 000 000"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIRECCIÓN -->
+
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <div class="form-number">
+                                02
+                            </div>
+
+                            <h2>
+                                Dirección de envío
+                            </h2>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group full">
+
+                                <label for="address">
+                                    DIRECCIÓN
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="address"
+                                    name="address"
+                                    placeholder="Calle, número, piso..."
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="city">
+                                    CIUDAD
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    placeholder="Madrid"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="postal">
+                                    CÓDIGO POSTAL
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="postal"
+                                    name="postal"
+                                    placeholder="28001"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="country">
+                                    PAÍS
+                                </label>
+
+                                <select
+                                    id="country"
+                                    name="country"
+                                    required>
+
+                                    <option value="">
+                                        Selecciona un país
+                                    </option>
+
+                                    <option value="ES">
+                                        España
+                                    </option>
+
+                                    <option value="PT">
+                                        Portugal
+                                    </option>
+
+                                    <option value="FR">
+                                        Francia
+                                    </option>
+
+                                    <option value="IT">
+                                        Italia
+                                    </option>
+
+                                    <option value="DE">
+                                        Alemania
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PAGO -->
+
+                    <div class="form-section">
+
+                        <div class="form-section-title">
+
+                            <div class="form-number">
+                                03
+                            </div>
+
+                            <h2>
+                                Método de pago
+                            </h2>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group full">
+
+                                <label>
+                                    MÉTODO
+                                </label>
+
+                                <select
+                                    id="paymentMethod"
+                                    name="paymentMethod"
+                                    required>
+
+                                    <option value="">
+                                        Selecciona un método
+                                    </option>
+
+                                    <option value="card">
+                                        💳 Tarjeta
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="pay-button">
+
+                        Continuar al pago →
+
+                    </button>
+
+
+                    <a
+                        href="carrito.html"
+                        class="back-cart">
+
+                        ← Volver al carrito
+
+                    </a>
+
+                </form>
+
+
+                <!-- RESUMEN -->
+
+                <aside class="checkout-summary">
+
+                    <div class="checkout-summary-label">
+                        RESUMEN
+                    </div>
+
+                    <h2>
+                        TU PEDIDO
+                    </h2>
+
+
+                    <div id="checkoutProducts">
+
+                        <!-- Productos mediante JS -->
+
+                    </div>
+
+
+                    <div class="checkout-summary-row">
+
+                        <span>
+                            Productos
+                        </span>
+
+                        <strong id="checkoutQuantity">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="checkout-summary-row">
+
+                        <span>
+                            Envío
+                        </span>
+
+                        <strong>
+                            Gratis
+                        </strong>
+
+                    </div>
+
+
+                    <div class="checkout-divider"></div>
+
+
+                    <div class="checkout-total">
+
+                        <span>
+                            TOTAL
+                        </span>
+
+                        <strong id="checkoutTotal">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+                    <div class="secure-checkout">
+
+                        🔒 Pago seguro
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    MANU<span>ECOM</span>
+                </a>
+
+                <p>
+                    Productos, proveedores y oportunidades
+                    para emprendedores.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    PLATAFORMA
+                </h4>
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="index.html#categorias">
+                    Categorías
+                </a>
+
+                <a href="index.html#productos">
+                    Productos
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    CUENTA
+                </h4>
+
+                <a href="login.html">
+                    Iniciar sesión
+                </a>
+
+                <a href="registro.html">
+                    Crear cuenta
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    AYUDA
+                </h4>
+
+                <a href="#">
+                    Contacto
+                </a>
+
+                <a href="#">
+                    Privacidad
+                </a>
+
+                <a href="#">
+                    Términos
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 MANU ECOOM
+            </span>
+
+            <span>
+                Todos los derechos reservados.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT DEL CHECKOUT
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const cart =
+                JSON.parse(
+                    localStorage.getItem("manuecoom_cart")
+                ) || [];
+
+
+            const productsContainer =
+                document.getElementById(
+                    "checkoutProducts"
+                );
+
+            const quantityElement =
+                document.getElementById(
+                    "checkoutQuantity"
+                );
+
+            const totalElement =
+                document.getElementById(
+                    "checkoutTotal"
+                );
+
+            const cartCount =
+                document.getElementById(
+                    "cartCount"
+                );
+
+
+            function formatPrice(price) {
+
+                return Number(price)
+                    .toFixed(2)
+                    .replace(".", ",") + " €";
+
+            }
+
+
+            let total = 0;
+
+            let quantity = 0;
+
+
+            /* =================================================
+               MOSTRAR PRODUCTOS
+            ================================================== */
+
+            if (cart.length === 0) {
+
+                productsContainer.innerHTML = `
+
+                    <div class="empty-checkout">
+
+                        Tu carrito está vacío.
+
+                        <br>
+
+                        <a
+                            href="index.html#productos"
+                            class="back-cart">
+
+                            Volver a productos
+
+                        </a>
+
+                    </div>
+
+                `;
+
+            } else {
+
+                cart.forEach(product => {
+
+                    const productQuantity =
+                        Number(product.quantity) || 1;
+
+                    const productPrice =
+                        Number(product.price) || 0;
+
+                    const productTotal =
+                        productQuantity * productPrice;
+
+
+                    quantity += productQuantity;
+
+                    total += productTotal;
+
+
+                    const element =
+                        document.createElement("div");
+
+                    element.className =
+                        "checkout-product";
+
+
+                    element.innerHTML = `
+
+                        <div class="checkout-product-info">
+
+                            <strong>
+                                ${escapeHTML(product.name)}
+                            </strong>
+
+                            <span>
+                                Cantidad:
+                                ${productQuantity}
+                            </span>
+
+                        </div>
+
+                        <div class="checkout-product-price">
+
+                            ${formatPrice(productTotal)}
+
+                        </div>
+
+                    `;
+
+
+                    productsContainer.appendChild(
+                        element
+                    );
+
+                });
+
+            }
+
+
+            cartCount.textContent =
+                quantity;
+
+            quantityElement.textContent =
+                quantity;
+
+            totalElement.textContent =
+                formatPrice(total);
+
+
+            /* =================================================
+               FORMULARIO
+            ================================================== */
+
+            const form =
+                document.getElementById(
+                    "checkoutForm"
+                );
+
+
+            form.addEventListener(
+                "submit",
+                (event) => {
+
+                    event.preventDefault();
+
+
+                    if (cart.length === 0) {
+
+                        alert(
+                            "Tu carrito está vacío."
+                        );
+
+                        return;
+
+                    }
+
+
+                    const payment =
+                        document.getElementById(
+                            "paymentMethod"
+                        ).value;
+
+
+                    if (!payment) {
+
+                        alert(
+                            "Selecciona un método de pago."
+                        );
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * De momento NO hacemos un cobro real.
+                     *
+                     * Más adelante este botón conectará
+                     * con el sistema de pago.
+                     */
+
+                    alert(
+                        "Checkout preparado correctamente. El sistema de pago se conectará en el siguiente paso."
+                    );
+
+                }
+            );
+
+
+            /* =================================================
+               SEGURIDAD BÁSICA
+            ================================================== */
+
+            function escapeHTML(value) {
+
+                return String(value)
+                    .replaceAll("&", "&amp;")
+                    .replaceAll("<", "&lt;")
+                    .replaceAll(">", "&gt;")
+                    .replaceAll('"', "&quot;")
+                    .replaceAll("'", "&#039;");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

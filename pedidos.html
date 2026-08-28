@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Pedido confirmado - MANU ECOOM">
+
+    <title>Pedido confirmado | MANU ECOOM</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* =====================================================
+           PEDIDO CONFIRMADO
+        ===================================================== */
+
+        .success-page {
+            min-height: 80vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 80px 20px 110px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(114, 189, 233, .12),
+                    transparent 35%
+                ),
+                #070707;
+        }
+
+        .success-card {
+            width: min(100%, 700px);
+
+            padding: 55px 45px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #111,
+                    #090909
+                );
+
+            border: 1px solid #292929;
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 30px 100px rgba(0, 0, 0, .5);
+        }
+
+        .success-icon {
+            width: 85px;
+            height: 85px;
+
+            margin: 0 auto 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid var(--blue);
+
+            border-radius: 50%;
+
+            background: rgba(114, 189, 233, .08);
+
+            color: var(--blue);
+
+            font-size: 36px;
+            font-weight: 900;
+        }
+
+        .success-label {
+            color: var(--blue);
+
+            font-size: 10px;
+            font-weight: 900;
+
+            letter-spacing: 3px;
+        }
+
+        .success-card h1 {
+            margin-top: 12px;
+
+            font-size: clamp(40px, 7vw, 68px);
+
+            line-height: .95;
+
+            letter-spacing: -3px;
+
+            font-weight: 900;
+        }
+
+        .success-card h1 span {
+            display: block;
+
+            color: var(--blue);
+        }
+
+        .success-card > p {
+            max-width: 500px;
+
+            margin: 22px auto 0;
+
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+        .order-box {
+            margin-top: 35px;
+
+            padding: 20px;
+
+            border: 1px solid #252525;
+
+            border-radius: 8px;
+
+            background: #080808;
+        }
+
+        .order-box small {
+            display: block;
+
+            color: #555;
+
+            font-size: 8px;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+        }
+
+        .order-number {
+            margin-top: 7px;
+
+            color: #fff;
+
+            font-size: 18px;
+            font-weight: 900;
+
+            letter-spacing: 1px;
+        }
+
+        .success-actions {
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .success-actions .primary-button,
+        .success-actions .secondary-button {
+            min-width: 190px;
+        }
+
+        .success-info {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 40px;
+
+            border-top: 1px solid #222;
+
+            padding-top: 30px;
+        }
+
+        .success-info div {
+            padding: 0 15px;
+
+            border-right: 1px solid #222;
+        }
+
+        .success-info div:last-child {
+            border-right: none;
+        }
+
+        .success-info strong {
+            display: block;
+
+            color: #fff;
+
+            font-size: 13px;
+        }
+
+        .success-info span {
+            display: block;
+
+            margin-top: 5px;
+
+            color: #555;
+
+            font-size: 9px;
+        }
+
+        @media (max-width: 600px) {
+
+            .success-card {
+                padding: 40px 22px;
+            }
+
+            .success-actions {
+                flex-direction: column;
+            }
+
+            .success-actions .primary-button,
+            .success-actions .secondary-button {
+                width: 100%;
+            }
+
+            .success-info {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .success-info div {
+                border-right: none;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                MANU<span>ECOM</span>
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html#categorias">
+                    Categorías
+                </a>
+
+                <a href="index.html#productos">
+                    Productos
+                </a>
+
+                <a href="index.html#proveedores">
+                    Proveedores
+                </a>
+
+            </nav>
+
+            <div class="header-actions">
+
+                <a href="index.html" class="register-button">
+                    Volver a la tienda
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         CONFIRMACIÓN
+    ====================================================== -->
+
+    <main class="success-page">
+
+        <section class="success-card">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <div class="success-label">
+                MANU ECOOM
+            </div>
+
+
+            <h1>
+                PEDIDO
+                <span>CONFIRMADO</span>
+            </h1>
+
+
+            <p>
+                Gracias por confiar en MANU ECOOM.
+                Hemos recibido correctamente tu pedido.
+                Cuando el sistema de pago esté conectado,
+                aquí aparecerá también la confirmación real
+                de la transacción.
+            </p>
+
+
+            <!-- NÚMERO DE PEDIDO -->
+
+            <div class="order-box">
+
+                <small>
+                    NÚMERO DE PEDIDO
+                </small>
+
+                <div
+                    class="order-number"
+                    id="orderNumber">
+
+                    MANU-000000
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+
+            <div class="success-actions">
+
+                <a
+                    href="index.html"
+                    class="primary-button">
+
+                    Seguir comprando →
+
+                </a>
+
+                <a
+                    href="pedidos.html"
+                    class="secondary-button">
+
+                    Mis pedidos
+
+                </a>
+
+            </div>
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="success-info">
+
+                <div>
+
+                    <strong>
+                        ✓ Pedido recibido
+                    </strong>
+
+                    <span>
+                        Hemos registrado tu pedido
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        📦 Preparación
+                    </strong>
+
+                    <span>
+                        Pendiente de procesamiento
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        🚚 Envío
+                    </strong>
+
+                    <span>
+                        Se actualizará posteriormente
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    MANU<span>ECOM</span>
+                </a>
+
+                <p>
+                    Productos, proveedores y oportunidades
+                    para emprendedores.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    PLATAFORMA
+                </h4>
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="index.html#categorias">
+                    Categorías
+                </a>
+
+                <a href="index.html#productos">
+                    Productos
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    CUENTA
+                </h4>
+
+                <a href="login.html">
+                    Iniciar sesión
+                </a>
+
+                <a href="registro.html">
+                    Crear cuenta
+                </a>
+
+                <a href="pedidos.html">
+                    Mis pedidos
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    AYUDA
+                </h4>
+
+                <a href="#">
+                    Contacto
+                </a>
+
+                <a href="#">
+                    Privacidad
+                </a>
+
+                <a href="#">
+                    Términos
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 MANU ECOOM
+            </span>
+
+            <span>
+                Todos los derechos reservados.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         GENERAR NÚMERO DE PEDIDO
+    ====================================================== -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const orderNumber =
+                document.getElementById("orderNumber");
+
+
+            const randomNumber =
+                Math.floor(
+                    100000 +
+                    Math.random() * 900000
+                );
+
+
+            orderNumber.textContent =
+                "MANU-" + randomNumber;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
