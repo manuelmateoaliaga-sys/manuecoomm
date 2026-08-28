@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-        content="MANU ECOOM - Plataforma profesional de proveedores y productos. Moda, perfumes, relojes, zapatillas, electrónica, construcción y mucho más.">
+        content="MANU ECOM - Plataforma profesional de proveedores y productos. Moda, perfumes, relojes, zapatillas, electrónica, construcción y mucho más.">
 
     <meta name="theme-color" content="#080808">
 
-    <title>MANU ECOOM | Proveedores & Productos</title>
+    <title>MANU ECOM | Proveedores & Productos</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -46,38 +46,13 @@
 
             <div class="header-actions">
 
-                <div id="guestActions">
+                <!--
+                    La cuenta y el carrito los gestiona Ecwid.
+                    Ya no usamos aquí el sistema antiguo.
+                -->
 
-                    <a href="login.html" class="login-link">
-                        Iniciar sesión
-                    </a>
-
-                    <a href="registro.html" class="register-button">
-                        Crear cuenta
-                    </a>
-
-                </div>
-
-                <div id="userActions" style="display: none;">
-
-                    <a href="cuenta.html" class="login-link">
-                        Mi cuenta
-                    </a>
-
-                    <button
-                        id="logoutButton"
-                        class="register-button"
-                        type="button">
-
-                        Cerrar sesión
-
-                    </button>
-
-                </div>
-
-                <a href="#productos" class="cart-button">
-                    🛒
-                    <span>Mi tienda</span>
+                <a href="#productos" class="register-button">
+                    🛒 Mi tienda
                 </a>
 
             </div>
@@ -102,7 +77,7 @@
                 <div class="hero-content">
 
                     <div class="hero-label">
-                        MANU ECOOM
+                        MANU ECOM
                     </div>
 
                     <h1>
@@ -134,7 +109,7 @@
                 <div class="hero-card">
 
                     <div class="hero-card-top">
-                        <span>MANU ECOOM</span>
+                        <span>MANU ECOM</span>
                         <span>01 / 10</span>
                     </div>
 
@@ -452,8 +427,8 @@
                 </h2>
 
                 <p>
-                    Explora nuestro catálogo y realiza tus pedidos
-                    directamente desde la tienda.
+                    Descubre nuestros productos y realiza tu compra
+                    directamente a través de nuestra tienda.
                 </p>
 
             </div>
@@ -465,28 +440,24 @@
 
             <div id="my-store-141602766"></div>
 
-            <div>
+            <script
+                data-cfasync="false"
+                type="text/javascript"
+                src="https://app.ecwid.com/script.js?141602766&data_platform=code&data_date=2026-08-28"
+                charset="utf-8">
+            </script>
 
-                <script
-                    data-cfasync="false"
-                    type="text/javascript"
-                    src="https://app.ecwid.com/script.js?141602766&data_platform=code&data_date=2026-08-28"
-                    charset="utf-8">
-                </script>
+            <script type="text/javascript">
 
-                <script type="text/javascript">
+                xProductBrowser(
+                    "categoriesPerRow=3",
+                    "views=grid(20,3) list(60) table(60)",
+                    "categoryView=grid",
+                    "searchView=list",
+                    "id=my-store-141602766"
+                );
 
-                    xProductBrowser(
-                        "categoriesPerRow=3",
-                        "views=grid(20,3) list(60) table(60)",
-                        "categoryView=grid",
-                        "searchView=list",
-                        "id=my-store-141602766"
-                    );
-
-                </script>
-
-            </div>
+            </script>
 
         </section>
 
@@ -508,8 +479,8 @@
                 </h2>
 
                 <p>
-                    Aquí prepararemos el espacio para mostrar
-                    tus proveedores reales y sus catálogos.
+                    Descubre diferentes sectores y proveedores
+                    disponibles en nuestra plataforma.
                 </p>
 
             </div>
@@ -650,24 +621,23 @@
                 <div>
 
                     <div class="section-label">
-                        MANU ECOOM
+                        MANU ECOM
                     </div>
 
                     <h2>
-                        ¿BUSCAS NUEVOS
-                        <span>PROVEEDORES?</span>
+                        DESCUBRE NUEVOS
+                        <span>PRODUCTOS</span>
                     </h2>
 
                     <p>
-                        Estamos preparando una plataforma
-                        pensada para conectar productos,
-                        proveedores y oportunidades.
+                        Encuentra productos, proveedores y oportunidades
+                        directamente desde nuestra tienda online.
                     </p>
 
                 </div>
 
-                <a href="registro.html" class="primary-button">
-                    Crear mi cuenta →
+                <a href="#productos" class="primary-button">
+                    Ver productos →
                 </a>
 
             </div>
@@ -728,23 +698,15 @@
             <div class="footer-column">
 
                 <h4>
-                    CUENTA
+                    TIENDA
                 </h4>
 
-                <a href="login.html">
-                    Iniciar sesión
-                </a>
-
-                <a href="registro.html">
-                    Crear cuenta
+                <a href="#productos">
+                    Ver productos
                 </a>
 
                 <a href="#productos">
                     Mi tienda
-                </a>
-
-                <a href="pedidos.html">
-                    Mis pedidos
                 </a>
 
             </div>
@@ -753,14 +715,14 @@
             <div class="footer-column">
 
                 <h4>
-                    MANU ECOOM
+                    MANU ECOM
                 </h4>
 
-                <a href="#">
+                <a href="#inicio">
                     Sobre nosotros
                 </a>
 
-                <a href="#">
+                <a href="#contacto">
                     Contacto
                 </a>
 
@@ -780,7 +742,7 @@
         <div class="footer-bottom">
 
             <span>
-                © 2026 MANU ECOOM
+                © 2026 MANU ECOM
             </span>
 
             <span>
@@ -793,104 +755,11 @@
 
 
     <!-- =====================================================
-         FIREBASE
+         JAVASCRIPT
     ====================================================== -->
-
-    <script type="module">
-
-        import { initializeApp } from
-            "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-
-        import {
-            getAuth,
-            onAuthStateChanged,
-            signOut
-        } from
-            "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
-
-
-        const firebaseConfig = {
-
-            apiKey: "AIzaSyD38CaxEVX_iVJZqvwlmxsb5w--WtTk8e4",
-
-            authDomain: "manu-ecom.firebaseapp.com",
-
-            projectId: "manu-ecom",
-
-            storageBucket: "manu-ecom.firebasestorage.app",
-
-            messagingSenderId: "461569348434",
-
-            appId: "1:461569348434:web:b822e97aa9c4352f3da08b",
-
-            measurementId: "G-8160RLXC3R"
-
-        };
-
-
-        const app = initializeApp(firebaseConfig);
-
-        const auth = getAuth(app);
-
-
-        const guestActions =
-            document.getElementById("guestActions");
-
-        const userActions =
-            document.getElementById("userActions");
-
-        const logoutButton =
-            document.getElementById("logoutButton");
-
-
-        onAuthStateChanged(auth, (user) => {
-
-            if (user) {
-
-                guestActions.style.display = "none";
-
-                userActions.style.display = "flex";
-
-            } else {
-
-                guestActions.style.display = "flex";
-
-                userActions.style.display = "none";
-
-            }
-
-        });
-
-
-        logoutButton.addEventListener("click", async () => {
-
-            try {
-
-                await signOut(auth);
-
-                window.location.reload();
-
-            } catch (error) {
-
-                console.error(
-                    "Error al cerrar sesión:",
-                    error
-                );
-
-                alert(
-                    "No se ha podido cerrar la sesión."
-                );
-
-            }
-
-        });
-
-    </script>
-
 
     <script src="script.js"></script>
 
 </body>
 
 </html>
-                   
